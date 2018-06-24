@@ -1,0 +1,146 @@
+@import "../../assets/sass/_common";
+@import "../../assets/sass/_flex";
+@import "../../assets/sass/_animation";
+.loading-box {
+    @include flex-center();
+    @include flex-direction(column);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    @include animation(hide-loading, 1s, linear, 1, 3s, normal, forwards);
+}
+
+.water-jar {
+    height: 280px;
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #020438;
+    border-radius: 100%;
+    overflow: hidden;
+    .water-filling {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 64px;
+    }
+    .water {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        -webkit-transform: translate(0, 100%);
+        transform: translate(0, 100%);
+        background: #4D6DE3;
+    }
+    .water_wave {
+        width: 200%;
+        position: absolute;
+        bottom: 100%;
+    }
+    .water_wave_back {
+        right: 0;
+        fill: #C7EEFF;
+        -webkit-animation: wave-back 1.4s infinite linear;
+        animation: wave-back 1.4s infinite linear;
+    }
+    .water_wave_front {
+        left: 0;
+        fill: #4D6DE3;
+        margin-bottom: -1px;
+        -webkit-animation: wave-front .7s infinite linear;
+        animation: wave-front .7s infinite linear;
+    }
+}
+
+@include keyframe(hide-loading) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@include keyframe(wave-back) {
+    100% {
+        -webkit-transform: translate(50%, 0);
+        transform: translate(50%, 0);
+    }
+}
+
+@include keyframe(wave-front) {
+    100% {
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+}
+
+.start-presentation-box {
+    @include flex-center();
+    @include flex-direction(column);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    @include animation(start-presentation, 2s, linear, 1, 3.5s, normal, forwards);
+    .step {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(flex-end);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+        top: 0px;
+        left: 0px;
+        a {
+            text-decoration: none;
+        }
+        .next {
+            @include flex-center();
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            @include border-radius(50%);
+            cursor: pointer;
+            @include transition();
+            &:hover {
+                background-color: rgb(70, 70, 70);
+                color: #ffae00;
+            }
+        }
+    }
+}
+
+@include keyframe(start-presentation) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,63 @@
+<div class="transform-box">
+  <div class="ele-title">Transforms</div>
+
+  <div (click)="showTwoD()" class="ele-prop-title">2D</div>
+  <ul *ngIf="twoD">
+    <li (click)="showTwoDRotate()">2D Rotate</li>
+    <li (click)="showTwoDScale()">2D Scale</li>
+    <li (click)="showTwoDTranslate()">2D Translate</li>
+    <li (click)="showTwoDSkew()">2D Skew</li>
+  </ul>
+
+  <div (click)="showThreeD()" class="ele-prop-title">3D</div>
+  <ul *ngIf="threeD">
+    <li (click)="showPerspective()">Perspective</li>
+    <li (click)="showThreeDRotate()">3D Rotate</li>
+    <li>3D Scale</li>
+    <li>3D Translate</li>
+    <li>3D Skew</li>
+  </ul>
+
+  <div *ngIf="twoDRotate" class="twod-rotate">
+    <div class="skb-logo">
+      <img src="./assets/images/logo-skuberg.png">
+    </div>
+  </div>
+
+  <div *ngIf="twoDScale" class="twod-scale">
+    <img src="./assets/images/tree.png">
+  </div>
+
+  <div *ngIf="twoDTranslate" class="twod-translate">
+    <div class="box-transl transl-1">
+      <div class="inner">X(-30px)</div>
+    </div>
+    <div class="box-transl transl-2">
+      <div class="inner">Y(-50px)</div>
+    </div>
+    <div class="box-transl transl-3">
+      <div class="inner">(-30px, -50px)</div>
+    </div>
+  </div>
+
+  <div *ngIf="twoDSkew" class="twod-skew">
+    <div class="box-square"></div>
+  </div>
+
+  <div *ngIf="perspective" class="perspective">
+    <div class="perspective-rotate">perspective</div>
+  </div>
+
+  <div *ngIf="threeDRotate" class="threed-rotate">
+    <div class="rotate-box">
+      <div class="rotate-frame">
+        <figure class="rotate rotate-1">rotate 1</figure>
+      </div>
+    </div>
+    <div class="rotate-box">
+      <div class="rotate-frame">
+        <figure class="rotate rotate-2">rotate 2</figure>
+      </div>
+    </div>
+  </div>
+</div>

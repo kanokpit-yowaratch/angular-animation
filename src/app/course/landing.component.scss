@@ -1,0 +1,70 @@
+@import "../../assets/sass/_common";
+@import "../../assets/sass/_flex";
+@import "../../assets/sass/_animation";
+.presentation-box {
+    @include flex-center();
+    @include flex-direction(column);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    @include animation(presentation-box, 2s, linear, 1, 0s, normal, forwards);
+    .step {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(space-between);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+        .prev,
+        .next {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            @include border-radius(50%);
+            cursor: pointer;
+            @include transition();
+            &:hover {
+                background-color: rgb(70, 70, 70);
+                color: #ffae00;
+            }
+        }
+        .prev {
+            @include flex-center();
+        }
+        .next {
+            @include flex-center();
+        }
+        .back-to-overview {
+            position: absolute;
+            width: 200px;
+            height: 50px;
+            padding-top: 12px;
+            bottom: 10px;
+            left: 45%;
+            color: #333;
+            background-color: grey;
+            text-align: center;
+            @include border-radius(5px);
+            @include transition();
+            cursor: pointer;
+            &:hover {
+                color: #ffae00;
+            }
+        }
+    }
+}
+
+@include keyframe(presentation-box) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

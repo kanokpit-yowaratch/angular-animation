@@ -1,0 +1,147 @@
+@import "../../../assets/sass/_common";
+@import "../../../assets/sass/_flex";
+@import "../../../assets/sass/_animation";
+.transform-box {
+    .twod-rotate {
+        @include flex-center();
+        width: 250px;
+        height: 250px;
+        border: 2px dotted #cdcdcd;
+        .skb-logo {
+            @include flex-center();
+            width: 80%;
+            height: 80%;
+            text-align: center;
+            @include border-radius(50%);
+            @include transition(transform, 1s, linear);
+            &:hover {
+                transform: rotate(180deg);
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .twod-scale {
+        width: 350px;
+        height: 495px;
+        background: #555;
+        transform: scale(0.5);
+        &:hover {
+            img {
+                transform: scale(0.5);
+            }
+        }
+        img {
+            width: 100%;
+            @include transition(transform, 1s, linear);
+        }
+    }
+    .twod-translate {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(space-between);
+        width: 520px;
+        height: 400px;
+        .box-transl {
+            width: 150px;
+            height: 100px;
+            background-color: #ff3300;
+            .inner {
+                @include flex-center();
+                width: 150px;
+                height: 100px;
+                background-color: #ff8800;
+                @include transition(transform, 0.5s, linear);
+            }
+        }
+        .transl-1 {
+            &:hover {
+                .inner {
+                    transform: translateX(-30px);
+                }
+            }
+        }
+        .transl-2 {
+            &:hover {
+                .inner {
+                    transform: translateY(-50px);
+                }
+            }
+        }
+        .transl-3 {
+            &:hover {
+                .inner {
+                    transform: translate(-30px, -50px);
+                }
+            }
+        }
+    }
+    .twod-skew {
+        .box-square {
+            width: 150px;
+            height: 100px;
+            background-color: #ff8800;
+            transform: skewX(10deg);
+            @include transition(transform, 0.5s, linear);
+            &:hover {
+                transform: skewX(-10deg);
+            }
+        }
+    }
+    .perspective {
+        .perspective-rotate {
+            @include flex-center();
+            width: 200px;
+            height: 150px;
+            background-color: #ff8800;
+            transform-style: preserve-3d;
+            transform: perspective(200px) rotateX(45deg);
+        }
+    }
+    .threed-rotate {
+        @include flexbox();
+        @include align-items(flex-start);
+        @include justify-content(space-between);
+        width: 300px;
+        height: 300px;
+        .rotate-box,
+        .rotate {
+            border-radius: 6px;
+        }
+        .rotate-box {
+            background: #eaeaed;
+            border: 1px dashed #cecfd5;
+            float: left;
+        }
+        .rotate {
+            @include flex-center();
+            color: white;
+            background: #FF8800;
+            height: 95px;
+            text-align: center;
+            width: 95px;
+        }
+        .rotate-frame {
+            cursor: pointer;
+            transform-style: preserve-3d;
+        }
+        .rotate-frame:hover {
+            animation: spin 5s linear infinite;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        .rotate-1 {
+            transform: perspective(200px) rotateX(45deg);
+        }
+        .rotate-2 {
+            transform: perspective(200px) rotateY(45deg);
+        }
+    }
+}

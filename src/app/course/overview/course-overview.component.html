@@ -1,0 +1,19 @@
+<div class="level-box">
+  <div class="main-topic">Course Overview</div>
+  <div class="level-child" [routerLink]="['/course/transitions']">
+    <span class="first">1.</span>
+    <span class="second">Transitions</span>
+  </div>
+  <div class="level-child">
+    <span class="first">2.</span>
+    <span class="second" [routerLink]="['/course/transforms']">Transforms</span>
+  </div>
+  <div class="level-child" [routerLink]="['/course/keyframes']">
+    <span class="first">3.</span>
+    <span class="second">Keyframes</span>
+  </div>
+  <div class="level-child" (click)="lineThrough()">
+    <span class="first" [class.line-through]="fourLineThrough">4.</span>
+    <span class="second" [class.line-through]="fourLineThrough">SVG</span>
+  </div>
+</div>

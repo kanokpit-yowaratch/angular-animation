@@ -1,0 +1,32 @@
+@import "../../../assets/sass/_common";
+@import "../../../assets/sass/_flex";
+@import "../../../assets/sass/_animation";
+.level-box {
+    height: auto;
+    @include flexbox();
+    @include flex-direction(column);
+    .level-child {
+        @include flexbox();
+        @include justify-content(flex-start);
+        font-size: 220%;
+        line-height: 2.5rem;
+        @include transition();
+        &:hover {
+            cursor: pointer;
+            color: #ffae00;
+        }
+        .first {
+            margin-right: 10px;
+            &.line-through {
+                color: grey;
+                text-decoration: line-through;
+            }
+        }
+        .second {
+            &.line-through {
+                color: grey;
+                text-decoration: line-through;
+            }
+        }
+    }
+}

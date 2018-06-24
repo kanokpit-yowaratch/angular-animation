@@ -1,0 +1,213 @@
+@import "../../../assets/sass/_common";
+@import "../../../assets/sass/_flex";
+@import "../../../assets/sass/_animation";
+.transition-box {
+    z-index: 2;
+    &.fade {
+      color: white;
+      .ele-title {
+        color: white;
+      }
+    }
+    ul {
+        margin-top: 0px;
+        li {
+            font-size: 180%;
+            line-height: 2.2rem;
+            cursor: pointer;
+            @include transition();
+            &:hover {
+                color: #ffae00;
+            }
+        }
+    }
+}
+
+.transt-prop {
+    @include flexbox();
+    @include align-items(flex-end);
+    @include justify-content(space-between);
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    visibility: hidden;
+    &.show {
+        visibility: visible;
+    }
+    .transt-one,
+    .transt-two {
+        @include flex-center();
+        width: 300px;
+        height: 100px;
+        color: white;
+        font-size: 1.8rem;
+    }
+    .transt-one {
+        background-color: #ffae00;
+    }
+    .transt-two {
+        background-color: #196174;
+    }
+    &.width-height {
+        .transt-one {
+            -webkit-transition-property: width;
+            -moz-transition-property: width;
+            -o-transition-property: width;
+            transition-property: width;
+            -webkit-transition-duration: 1s;
+            -moz-transition-duration: 1s;
+            -o-transition-duration: 1s;
+            transition-duration: 1s;
+            -webkit-transition-timing-function: ease;
+            -moz-transition-timing-function: ease;
+            -o-transition-timing-function: ease;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            &:hover {
+                width: 450px;
+            }
+        }
+        .transt-two {
+            -webkit-transition-property: width, height;
+            -moz-transition-property: width, height;
+            -o-transition-property: width, height;
+            transition-property: width, height;
+            -webkit-transition-duration: 1s, 1s;
+            -moz-transition-duration: 1s, 1s;
+            -o-transition-duration: 1s, 1s;
+            transition-duration: 1s, 1s;
+            -webkit-transition-timing-function: ease, ease;
+            -moz-transition-timing-function: ease, ease;
+            -o-transition-timing-function: ease, ease;
+            transition-timing-function: ease, ease;
+            transition-delay: 0s, 0s;
+            &:hover {
+                width: 450px;
+                height: 250px;
+            }
+        }
+    }
+    &.color {
+        .transt-one {
+            -webkit-transition-property: color;
+            -moz-transition-property: color;
+            -o-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 1s;
+            -moz-transition-duration: 1s;
+            -o-transition-duration: 1s;
+            transition-duration: 1s;
+            -webkit-transition-timing-function: ease;
+            -moz-transition-timing-function: ease;
+            -o-transition-timing-function: ease;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            &:hover {
+                color: #196174;
+            }
+        }
+        .transt-two {
+            -webkit-transition-property: background-color, height;
+            -moz-transition-property: background-color, height;
+            -o-transition-property: background-color, height;
+            transition-property: background-color, height;
+            -webkit-transition-duration: 1s, 1s;
+            -moz-transition-duration: 1s, 1s;
+            -o-transition-duration: 1s, 1s;
+            transition-duration: 1s, 1s;
+            -webkit-transition-timing-function: ease, ease;
+            -moz-transition-timing-function: ease, ease;
+            -o-transition-timing-function: ease, ease;
+            transition-timing-function: ease, ease;
+            transition-delay: 0s, 0s;
+            &:hover {
+                background-color: #ffae00; // height: 250px;
+            }
+        }
+    }
+    &.opacity {
+        .transt-one {
+            -webkit-transition-property: opacity;
+            -moz-transition-property: opacity;
+            -o-transition-property: opacity;
+            transition-property: opacity;
+            -webkit-transition-duration: 1s;
+            -moz-transition-duration: 1s;
+            -o-transition-duration: 1s;
+            transition-duration: 1s;
+            -webkit-transition-timing-function: ease;
+            -moz-transition-timing-function: ease;
+            -o-transition-timing-function: ease;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            opacity: 1;
+            &:hover {
+              opacity: 0;
+            }
+        }
+        .transt-two {
+            -webkit-transition-property: opacity, width, height,font-size;
+            -moz-transition-property: opacity, width, height,font-size;
+            -o-transition-property: opacity, width, height,font-size;
+            transition-property: opacity, width, height,font-size;
+            -webkit-transition-duration: 1s,1s,1s,1s;
+            -moz-transition-duration: 1s,1s,1s,1s;
+            -o-transition-duration: 1s,1s,1s,1s;
+            transition-duration: 1s,1s,1s,1s;
+            -webkit-transition-timing-function: ease,ease,ease,ease;
+            -moz-transition-timing-function: ease,ease,ease,ease;
+            -o-transition-timing-function: ease,ease,ease,ease;
+            transition-timing-function: ease,ease,ease,ease;
+            transition-delay: 0s,0s,0s,0s;
+            opacity: 0;
+            font-size: 50%;
+            &:hover {
+              opacity: 1;
+              width: 400px;
+              height: 200px;
+              font-size: 250%;
+            }
+        }
+    }
+    .margin {
+      .transt-one {
+        -webkit-transition: width 0.3s ease;
+        -moz-transition: width 0.3s ease;
+        -ms-transition: width 0.3s ease;
+        -o-transition: width 0.3s ease;
+        transition: width 0.3s ease;
+        margin: 15px;
+        &:hover {
+          margin: 0;
+        }
+      }
+    }
+}
+
+.show-syntax {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  padding-top: 10px;
+  text-align: center;
+  top: 10px;
+  left: 10px;
+  background-color: rosybrown;
+  cursor: pointer;
+  @include border-radius(5px);
+}
+.full-transt, .short-transt {
+  position: absolute;
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+
+.full-transt {
+  top: 30px;
+}
+.short-transt {
+  top: 375px;
+}

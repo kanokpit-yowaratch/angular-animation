@@ -1,0 +1,52 @@
+@mixin keyframe($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+      @content;
+    }
+  
+    @-moz-keyframes #{$animation-name} {
+      @content;
+    }
+  
+    @-o-keyframes #{$animation-name} {
+      @content;
+    }
+  
+    @keyframes #{$animation-name} {
+      @content;
+    }
+  }
+  
+  // Usage: @include animation(block-1-animate, $speed, ease-out, infinite)
+  @mixin animation($animation, $duration, $transition, $iteration, $delay, $direction, $fillmode) {
+    -webkit-animation-name: $animation;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-timing-function: $transition;
+    -webkit-animation-iteration-count: $iteration;
+    -webkit-animation-delay: $delay;
+    -webkit-animation-direction: $direction;
+    -webkit-animation-fill-mode: $fillmode;
+  
+    -moz-animation-name: $animation;
+    -moz-animation-duration: $duration;
+    -moz-animation-timing-function: $transition;
+    -moz-animation-iteration-count: $iteration;
+    -moz-animation-delay: $delay;
+    -moz-animation-direction: $direction;
+    -moz-animation-fill-mode: $fillmode;
+
+    -o-animation-name: $animation;
+    -o-animation-duration: $duration;
+    -o-animation-timing-function: $transition;
+    -o-animation-iteration-count: $iteration;
+    -o-animation-delay: $delay;
+    -o-animation-direction: $direction;
+    -o-animation-fill-mode: $fillmode;
+
+    animation-name: $animation;
+    animation-duration: $duration;
+    animation-timing-function: $transition;
+    animation-iteration-count: $iteration;
+    animation-delay: $delay;
+    animation-direction: $direction;
+    animation-fill-mode: $fillmode;
+  }

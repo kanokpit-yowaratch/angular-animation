@@ -1,0 +1,31 @@
+<div class="transition-box" [class.fade]="showSyntax">
+  <span class="ele-title" (click)="showShortTransition()">Transitions</span>
+  <div class="ele-prop-title" [class.through]="showShortTranst" (click)="showPropWidth()">transition-property</div>
+  <ul *ngIf="showWidth && transPropList && transPropList.length">
+    <li (click)="transtProp(trs.prop)" *ngFor="let trs of transPropList">{{trs.title}}</li>
+  </ul>
+
+  <div class="ele-prop-title" [class.through]="showShortTranst">transition-duration</div>
+  <div class="ele-prop-title" [class.through]="showShortTranst">transition-timing-function</div>
+  <div class="ele-prop-title" [class.through]="showShortTranst">transition-delay</div>
+  <div class="ele-prop-title" *ngIf="showShortTranst">transition: all 1s ease-out;</div>
+
+  <div class="transt-prop width-height" [class.show]="transPropList[0].ref">
+    <div class="transt-one">width</div>
+    <div class="transt-two">width, height</div>
+  </div>
+
+  <div class="transt-prop color" [class.show]="transPropList[1].ref">
+    <div class="transt-one">color</div>
+    <div class="transt-two">background-color</div>
+  </div>
+
+  <div class="transt-prop opacity" [class.show]="transPropList[2].ref">
+    <div class="transt-one">Fade Out</div>
+    <div class="transt-two">Zoom In</div>
+  </div>
+
+  <div class="show-syntax" (click)="showHideSyntax()">Syntax</div>
+  <div class="full-transt" [class.show]="showSyntax"><img src="./assets/images/full-transt.png"></div>
+  <div class="short-transt" [class.show]="showSyntax"><img src="./assets/images/short-transt.png"></div>
+</div>
