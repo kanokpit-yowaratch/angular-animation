@@ -13,9 +13,8 @@
   <ul *ngIf="threeD">
     <li (click)="showPerspective()">Perspective</li>
     <li (click)="showThreeDRotate()">3D Rotate</li>
-    <li>3D Scale</li>
+    <li (click)="showThreeDScale()">3D Scale</li>
     <li>3D Translate</li>
-    <li>3D Skew</li>
   </ul>
 
   <div *ngIf="twoDRotate" class="twod-rotate">
@@ -57,6 +56,14 @@
     <div class="rotate-box">
       <div class="rotate-frame">
         <figure class="rotate rotate-2">rotate 2</figure>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="threeDScale" class="three-scale">
+    <div class="scale-box">
+      <div class="scale-frame">
+        <div class="scale scale-1">scale box</div>
       </div>
     </div>
   </div>

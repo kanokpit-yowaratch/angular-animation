@@ -4,12 +4,18 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { HttpModule, Http } from "@angular/http";
 import { RouterModule } from "@angular/router";
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { CommonService } from './shared/services/common.service';
+import { UploadService } from './shared/services/upload.service';
+
 import { AppComponent } from "./app.component";
 import { LandingComponent } from "./course/landing.component";
 import { CourseOverviewComponent } from "./course/overview/course-overview.component";
 import { TransitionComponent } from "./course/transition/transition.component";
 import { SlideLoadingComponent } from "./slide-loading/slide-loading.component";
 import { TransformsComponent } from './course/transforms/transforms.component';
+import { SingleComponent } from "./single/single.component";
+import { MultipleComponent } from "./multiple/multiple.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +24,9 @@ import { TransformsComponent } from './course/transforms/transforms.component';
     CourseOverviewComponent,
     TransitionComponent,
     SlideLoadingComponent,
-    TransformsComponent
+    TransformsComponent,
+    SingleComponent,
+    MultipleComponent
   ],
   imports: [
     BrowserModule,
@@ -35,10 +43,16 @@ import { TransformsComponent } from './course/transforms/transforms.component';
           { path: "transforms", component: TransformsComponent }
         ]
       },
+      { path: "single", component: SingleComponent },
+      { path: "multiple", component: MultipleComponent },
       { path: "**", redirectTo: "", pathMatch: "full" }
-    ])
+    ]),
+    AngularFontAwesomeModule
   ],
   bootstrap: [AppComponent],
-  providers: []
+  providers: [
+    CommonService,
+    UploadService
+  ]
 })
 export class AppModule {}

@@ -80,12 +80,13 @@
     .twod-skew {
         .box-square {
             width: 150px;
-            height: 100px;
+            height: 150px;
+            // @include border-radius(50%);
             background-color: #ff8800;
-            transform: skewX(10deg);
+            transform: skewY(-45deg);
             @include transition(transform, 0.5s, linear);
             &:hover {
-                transform: skewX(-10deg);
+                transform: skewY(45deg);
             }
         }
     }
@@ -142,6 +143,48 @@
         }
         .rotate-2 {
             transform: perspective(200px) rotateY(45deg);
+        }
+    }
+    .three-scale {
+        @include flexbox();
+        @include align-items(flex-start);
+        @include justify-content(space-between);
+        width: 300px;
+        height: 300px;
+        .scale-box,
+        .scale {
+            border-radius: 6px;
+        }
+        .scale-box {
+            background: #eaeaed;
+            border: 1px dashed #cecfd5;
+            float: left;
+        }
+        .scale {
+            @include flex-center();
+            color: white;
+            background: #FF8800;
+            height: 95px;
+            text-align: center;
+            width: 95px;
+        }
+        .scale-frame {
+            cursor: pointer;
+            transform-style: preserve-3d;
+        }
+        .scale-frame:hover {
+            animation: spin-scale 5s linear 1;
+        }
+        @keyframes spin-scale {
+            0% {
+                transform: scale(0.5) rotateY(0deg);
+            }
+            100% {
+                transform: scale(2) rotateY(360deg);
+            }
+        }
+        .scale-1 {
+            transform: perspective(200px) scale(0.5) scaleZ(1.75) rotateX(45deg);
         }
     }
 }

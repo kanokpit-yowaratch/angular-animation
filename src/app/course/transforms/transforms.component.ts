@@ -14,6 +14,7 @@ export class TransformsComponent implements OnInit {
   twoDSkew: boolean;
   perspective: boolean;
   threeDRotate: boolean;
+  threeDScale: boolean;
   constructor() {}
 
   showTwoD() {
@@ -65,6 +66,13 @@ export class TransformsComponent implements OnInit {
 
   showThreeDRotate() {
     this.threeDRotate = !this.threeDRotate;
+    this.perspective = false;
+  }
+
+  showThreeDScale() {
+    this.threeDScale = !this.threeDScale;
+    this.perspective = false;
+    this.threeDRotate = false;
   }
 
   hideAllTwoD() {
@@ -77,6 +85,8 @@ export class TransformsComponent implements OnInit {
 
   hideAllThreeD() {
     this.perspective = false;
+    this.threeDRotate = false;
+    this.threeDScale = false;
   }
 
   ngOnInit() {
