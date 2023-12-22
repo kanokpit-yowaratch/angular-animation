@@ -33,10 +33,6 @@ export class LandingComponent implements OnInit {
     }
   }
 
-  backToOverview() {
-    this.router.navigate(["course/overview"]);
-  }
-
   ngOnInit() {
     if (this.router.url == "/course") {
       this.router.navigate(["course/overview"]);

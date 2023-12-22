@@ -13,14 +13,10 @@
         @include flexbox();
         @include align-items(center);
         @include justify-content(space-between);
-        position: absolute;
         width: 100%;
         height: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
         top: 0px;
         left: 0px;
-        z-index: -1;
         .prev,
         .next {
             width: 100px;
@@ -41,6 +37,9 @@
             @include flex-center();
         }
         .back-to-overview {
+            @include flex-center();
+            @include flex-direction(column);
+            @include justify-content(space-around);
             position: absolute;
             width: 200px;
             height: 50px;

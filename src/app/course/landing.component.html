@@ -3,6 +3,9 @@
   <div class="step">
     <div class="prev" (click)="prev()">Prev</div>
     <div class="next" (click)="next()">Next</div>
-    <div class="back-to-overview" (click)="backToOverview()">Back to Overview</div>
+    <div class="back-to-overview">
+      <a [routerLink]="['/course/overview']">Back to Overview</a>
+      <a [routerLink]="['/']">Refresh</a>
+    </div>
   </div>
 </div>

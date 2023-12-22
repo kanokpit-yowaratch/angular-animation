@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-overview.component.scss']
 })
 export class CourseOverviewComponent implements OnInit {
-  fourLineThrough: boolean;
+  fourLineThrough: boolean = false;
   constructor() { }
 
   lineThrough() {

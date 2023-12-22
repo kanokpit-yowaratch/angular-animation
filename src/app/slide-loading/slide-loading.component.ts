@@ -9,8 +9,8 @@ import { NgStyle } from '@angular/common';
 })
 export class SlideLoadingComponent implements OnInit {
   currentRoute: any;
-  count: number;
-  transformValue: string;
+  count: number = 0;
+  transformValue: string = '';
 
   constructor(private router: Router) { }
 
@@ -26,7 +26,7 @@ export class SlideLoadingComponent implements OnInit {
       if (percent == 100) {
         clearInterval(interval);
 
-        // this.router.navigate(["course"]);
+        this.router.navigate(["course"]);
       }
     }, 30);
   }

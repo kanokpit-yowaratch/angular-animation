@@ -6,15 +6,15 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./transforms.component.scss"]
 })
 export class TransformsComponent implements OnInit {
-  twoD: boolean;
-  threeD: boolean;
-  twoDRotate: boolean;
-  twoDScale: boolean;
-  twoDTranslate: boolean;
-  twoDSkew: boolean;
-  perspective: boolean;
-  threeDRotate: boolean;
-  threeDScale: boolean;
+  twoD: boolean = false;
+  threeD: boolean = false;
+  twoDRotate: boolean = false;
+  twoDScale: boolean = false;
+  twoDTranslate: boolean = false;
+  twoDSkew: boolean = false;
+  perspective: boolean = false;
+  threeDRotate: boolean = false;
+  threeDScale: boolean = false;
   constructor() {}
 
   showTwoD() {
